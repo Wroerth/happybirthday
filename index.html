@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <audio id="musica" autoplay loop>
+    <audio id="musica" loop>
         <source src="photograph.mp3" type="audio/mpeg">
         <!-- Añade otros formatos de audio aquí si es necesario -->
-    </audio>
+    </audio>    
     <div id="perspectiva">
         <div id="contenedor">
             <div class="cara frontal">
@@ -39,7 +38,7 @@
                         
                         Con admiración y respeto,<br>
                         Mauricio Colque.
-                        </p>
+                    </p>
                 </div>
             </div>
         </div>
@@ -48,5 +47,21 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Espera a que el documento esté completamente cargado
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtén el elemento de audio
+            var audio = document.getElementById('musica');
+    
+            // Agrega un evento de clic al documento
+            document.addEventListener('click', function() {
+                // Verifica si el audio está pausado
+                if (audio.paused) {
+                    // Reproduce el audio
+                    audio.play();
+                }
+            });
+        });
+    </script>    
 </body>
 </html>
